@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 35vw 35vw;
+  grid-template-rows: 45vw 45vw;
+  grid-template-gap: 25px;
+  grid-template-areas:
+  "top top"
+  "bottomLeft bottomRight";
+  border: 2px solid orange;
+  width: 80vw;
+  justify-content: center; 
+}
+
+.box {
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+#one {
+  grid-area: top;
+}
+
+#two {
+  grid-area: bottomLeft;
+  margin-bottom: 10px;
+}
+
+#three {
+  grid-area: bottomRight;
+  margin-bottom: 10px;
+  margin-left: 2px;
+}
+
+.gridBG {
+  display: grid;
+  margin: auto;
+  border: 2px solid orange;
+  width: 80vw;
+  justify-content: center;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-template-rows: 10vw 40vw 40vw;
+  grid-template-areas: 
+  "nav  nav nav nav"
+  "sidebar main main main"
+  "sidebar main main main";
+}
+
+#four {
+  grid-area: sidebar;
+  background: blue;
+  border: 2px dotted white;
+  margin: 2px;
+} 
+
+#five {
+  grid-area: main;
+  background: yellow;
+  border: 2px solid;
+  margin:2px;
+  text-align:center;
+}
+
+.nav1 {
+  grid-area: nav;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-direction: row;
+  background: red;
+  border: 2px double blue;
+  margin: 2px;
+}
+
