@@ -11,8 +11,8 @@ html, body {
   grid-template-gap: 25px;
   grid-template-areas:
   "top top"
-  "bottomLeft bottomRight";
-  border: 2px solid orange;
+  "knicks mets";
+  
   width: 80vw;
   justify-content: center; 
 }
@@ -28,23 +28,61 @@ html, body {
 
 #one {
   grid-area: top;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 12px double blue;
+  color: white;
+  background-image: url("https://i.gifer.com/3a1.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  align-items: center;
 }
 
 #two {
-  grid-area: bottomLeft;
+  grid-area: knicks;
+  border: 6px double orange;
   margin-bottom: 10px;
+  background-image: url("https://c.tenor.com/dCb_0j0TsAIAAAAd/sidetalk-sidetalknyc.gif");
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
 }
 
 #three {
-  grid-area: bottomRight;
+  grid-area: mets;
   margin-bottom: 10px;
   margin-left: 2px;
+  border: 6px double orange; 
+  background-image:url("https://media0.giphy.com/media/qTDczOIocZhSqkmODs/giphy-downsized-large.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+}
+
+h1, h2 {
+  background: black;
+  color: white;
+}
+
+h3 {
+  background: orange;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color:orange;
 }
 
 .gridBG {
   display: grid;
   margin: auto;
-  border: 2px solid orange;
+  border: 22px solid orange;
   width: 80vw;
   justify-content: center;
   grid-template-columns: 20vw 20vw 20vw 20vw;
@@ -55,29 +93,81 @@ html, body {
   "sidebar main main main";
 }
 
+
+
 #four {
+  display: flex;
   grid-area: sidebar;
   background: blue;
   border: 2px dotted white;
   margin: 2px;
+  flex-direction: column;
+  align-content: space-evenly;
+  overflow-y: scroll;
+  
 } 
 
 #five {
   grid-area: main;
-  background: yellow;
+  background: orange;
   border: 2px solid;
   margin:2px;
   text-align:center;
+  justify-content: space-around;
+  overflow-y: scroll;
+  height: 800px;
 }
 
 .nav1 {
   grid-area: nav;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  background: red;
+  background: blue;
   border: 2px double blue;
   margin: 2px;
 }
 
+.nav1 ul {
+  list-style-type: none;
+}
+
+.nav1 img {
+  width: 15%
+}
+
+@media(max-width:800px) {
+  body {
+    width: 90vw;
+    justify-content: center;
+  }
+  
+  #four, #five {
+    width: 90%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+
+  }
+
+  .gridBG {
+    grid-template-areas: 
+    "nav"
+    "main"
+    "sidebar";
+    border: none;
+    grid-template-columns: 90vw;
+    grid-template-rows: 90vw;
+    grid-template-gap: 5px;
+    justify-content: center;
+  }
+
+  .nav1 {
+    flex-direction: column;
+    width: 90%
+  }
+
+  #logo {
+    width: 50%;
+  }
+}
